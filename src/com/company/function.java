@@ -103,5 +103,11 @@ public class function {
 
     }
 
+    public static boolean checkWin(char [] [] a)
+    {
+        boolean Xwin;
+        for()
+    }
+
 
 }
