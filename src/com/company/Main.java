@@ -29,6 +29,11 @@ public class Main {
         grid [0] [1] = ' ';
         System.out.println("Please choose who would like to go first, player or computer?");
 
+
+
+
+
+
         //Fail-safe system to make sure user inputs to correct input
         while(true)
         {
@@ -54,17 +59,22 @@ public class Main {
             grid[0][0] = 'O';
             function.printgird(grid);
         }
+
         System.out.println("Please enter to coordinate to play:");
-        in = kbin.nextLine();
-        if(function.markplayer(grid, in) == true)
+        while(true)
         {
-
+            in = kbin.nextLine();
+            if (function.markplayer(grid, in) == true)
+            {
+                break;
+            }
+            else {
+                System.out.println("Invalid Input, please enter a valid coordinate that is not in use (Ex: \"01\")");
+            }
         }
-        else
-        {
-            System.out.println("Coordinate already in use, please enter another input");
-        }
 
+
+        //int r = Integer.parseInt("p");
 
 
 
