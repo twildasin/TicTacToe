@@ -32,9 +32,6 @@ public class Main {
 
 
 
-
-
-
         //Fail-safe system to make sure user inputs to correct input
         while(true)
         {
@@ -100,32 +97,6 @@ public class Main {
             }
         }
         System.out.println("Tie!");
-
-
-
-
-
-
-
-        /*for(int i = 0; i<3; i++)
-        {
-            for (int k = 0; k < 3; k++) {
-                grid[k][i] = ' ';
-            }
-        }
-
-        grid [1] [0] = 'O';
-        grid [1] [1] = ' ';
-        grid [2] [2] = ' ';
-        grid [0] [0] = 'X';
-        grid [0] [1] = ' ';
-        grid [1] [2] = 'X';
-        function.printgird(grid);
-        //System.out.println(function.checkWin(grid));
-        function.findMove(grid);
-        //System.out.println(function.findStop(grid, ' ', 'O', 2));
-        function.printgird(grid);*/
-
 
 
     }

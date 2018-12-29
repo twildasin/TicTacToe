@@ -358,8 +358,6 @@ public class function {
         }
 
         //---------------------------------------------------------
-        //System.out.println(pos1d + "" + pos2d);
-
 
 
         if(end)
@@ -372,7 +370,6 @@ public class function {
         else
             return ("-1");
     }
-
 
 
 }
