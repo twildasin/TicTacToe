@@ -43,12 +43,12 @@ public class function {
             if (Objects.equals(a[col][row], ' '))
             {
                 a[col][row] = 'X';
-                function.printgird(a);
+                //function.printgird(a);
                 return true;
             }
             else
             {
-                function.printgird(a);
+                //function.printgird(a);
                 return false;
             }
         }
@@ -79,7 +79,7 @@ public class function {
         Random rn = new Random();
         int i = rn.nextInt(in.length() / 3);
         a [Integer.parseInt(in.substring(i*3, (i*3 +1)))] [Integer.parseInt(in.substring(i*3 + 1, (i*3 +2)))] = 'O';
-        function.printgird(a);
+        //function.printgird(a);
 
     }
 
@@ -157,28 +157,59 @@ public class function {
 
     public static void askForMove (char [] [] a)
     {
+        boolean err = false;
         String in = "";
         Scanner kbin = new Scanner(System.in);
         System.out.println("Please enter to coordinate to play:");
         while(true)
         {
+            err = false;
             in = kbin.nextLine();
-            in = (Objects.equals(in, "11") ? "20" : in);
-            in = (Objects.equals(in, "21") ? "21" : in);
-            in = (Objects.equals(in, "31") ? "22" : in);
-            in = (Objects.equals(in, "12") ? "10" : in);
-            in = (Objects.equals(in, "22") ? "11" : in);
-            in = (Objects.equals(in, "32") ? "12" : in);
-            in = (Objects.equals(in, "13") ? "00" : in);
-            in = (Objects.equals(in, "23") ? "01" : in);
-            in = (Objects.equals(in, "33") ? "02" : in);
 
-            if (function.markplayer(a, in) == true)
+            switch (in) //Converts the traditional coordinate inputs to the corresponding 2D array coordinates
+            {
+                case "11": //This is a regular coordinate
+                    in = "20"; //This is the same position for a 2D array coordinate
+                    break;
+                case "21":
+                    in = "21";
+                    break;
+                case "31":
+                    in = "22";
+                    break;
+                case "12":
+                    in = "10";
+                    break;
+                case "22":
+                    in = "11";
+                    break;
+                case "32":
+                    in = "12";
+                    break;
+                case "13":
+                    in = "00";
+                    break;
+                case "23":
+                    in = "01";
+                    break;
+                case "33":
+                    in = "02";
+                    break;
+                default:
+                    err = true;
+                    break;
+            }
+
+
+            //System.out.println(in);
+
+            if (err == false && function.markplayer(a, in) == true)
             {
                 break;
             }
             else {
-                System.out.println("Invalid Input, please enter a valid coordinate that is not in use (Ex: \"01\")");
+                function.printgird(a);
+                System.out.println("Invalid Input, please enter a valid coordinate that is not in use (Ex: \"11\")");
             }
         }
     }

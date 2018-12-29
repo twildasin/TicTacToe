@@ -74,7 +74,7 @@ public class Main {
 
 
 
-        boolean tie;
+        boolean tie = true;
         for(int i = moves; i < 9; i++)
         {
             if((playerfirst && moves % 2 == 0) || (!playerfirst && moves %  2 != 0))
@@ -92,11 +92,16 @@ public class Main {
             if(function.checkWin(grid) == 0)
             {
                 tie =false;
+                function.printgird(grid);
                 System.out.println("Computer Won!");
                 break;
             }
         }
-        System.out.println("Tie!");
+        if(tie)
+        {
+            function.printgird(grid);
+            System.out.println("Tie!");
+        }
 
 
     }
