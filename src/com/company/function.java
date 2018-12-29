@@ -130,17 +130,27 @@ public class function {
         String compWin = function.findStop(a,'O',' ', 1);
         String playerWin = function.findStop(a,'X',' ', 1);
         String increase = function.findStop(a, ' ', 'O', 2);
+        String decrease = function.findStop(a, ' ', 'X', 2);
+
         if(Objects.equals(compWin, "-1"))
         {
             if(Objects.equals(playerWin, "-1"))
             {
-                if(Objects.equals(increase, "-1"))
+                if(Objects.equals(decrease, "-1"))
                 {
-                    function.playRandom(a);
+                    if(Objects.equals(increase, "-1"))
+                    {
+                        function.playRandom(a);
+                    }
+                    else //If system detects move to decrease player's chance of winning
+                    {
+                        System.out.println("In");
+                        a [Integer.parseInt(increase.substring(0,1))] [Integer.parseInt(increase.substring(1,2))] = 'O';
+                    }
                 }
                 else // If system detects move to branch off of its own marker
                 {
-                    a [Integer.parseInt(increase.substring(0,1))] [Integer.parseInt(increase.substring(1,2))] = 'O';
+                    a [Integer.parseInt(decrease.substring(0,1))] [Integer.parseInt(decrease.substring(1,2))] = 'O';
                 }
             }
             else // If  system found potential win for player

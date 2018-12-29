@@ -92,7 +92,7 @@ public class Main {
             if(function.checkWin(grid) == 0)
             {
                 tie =false;
-                function.printgird(grid);
+                //function.printgird(grid);
                 System.out.println("Computer Won!");
                 break;
             }
