@@ -231,6 +231,7 @@ public class function {
         //int posb1 = 3;
         //by tanner
         //int posb2 = 3;
+        boolean difound = false;
         int col = -1;
         int row = -1;
         int d = -1;
@@ -346,6 +347,7 @@ public class function {
             if (countd == 2 && count_d == 1)
             {
                 d = 1;
+                difound = true;
                 endd = true;
             }
             else if (i == 2)
@@ -385,6 +387,7 @@ public class function {
                 if (countd == 2 && count_d == 1)
                 {
                     d = 2;
+                    difound = true;
                     endd = true;
                 }
                 else if (i == 2)
@@ -401,9 +404,9 @@ public class function {
         //---------------------------------------------------------
 
 
-        if(end)
+        if(end && difound == false)
             return (pos1 + "" + pos2);
-        else if (endy)
+        else if (endy && difound == false)
             return (pos2y + "" + pos1y);
         else if (endd)
             return (pos1d + "" + pos2d);

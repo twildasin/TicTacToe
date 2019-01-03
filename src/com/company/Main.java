@@ -51,6 +51,7 @@ public class Main {
                 System.out.println("Invalid input, please input either \"player\" or \" computer\"");
             }
         }
+        function.printgird(grid);
 
         if (!playerfirst)
         {
@@ -70,6 +71,12 @@ public class Main {
             moves++;
             function.printgird(grid);
         }
+        else if(playerfirst && Objects.equals(grid [1] [1] , 'X'))
+        {
+            grid [0] [0] = 'O';
+            moves++;
+            function.printgird(grid);
+        }
 
 
 
@@ -82,6 +89,7 @@ public class Main {
                 function.askForMove(grid);
                 moves++;
             }
+            //else if(moves == 2 && )
             else
             {
                 function.findMove(grid);
